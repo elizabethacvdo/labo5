@@ -33,8 +33,12 @@ public class animalthreats extends Thread{
 
     @Override
     public void run() {
+        if (!"tortuga".equals(this.nombre)){
         for (int i=x;i<=this.limite;i+=10){
             System.out.println(this.nombre+"avanza");
+           
+                
+            
             this.animal.setLocation(i,y);
             try{
                 sleep(100);
@@ -46,7 +50,7 @@ public class animalthreats extends Thread{
         
         yield();
         }
-        for (int i=limite;i<x;i-=10){
+        for (int i=limite;i>=x;i-=10){
             System.out.println(this.nombre+"avanza");
             this.animal.setLocation(i,y);
             try{
@@ -58,8 +62,37 @@ public class animalthreats extends Thread{
         System.out.println(this.nombre+"ha llegado a la meta");
         
         yield();
+        }}else{
+         for (int i=x;i<=this.limite;i+=5){
+            System.out.println(this.nombre+"avanza");
+           
+                
+            
+            this.animal.setLocation(i,y);
+            try{
+                sleep(100);
+            } catch (InterruptedException ex) {
+            ex.printStackTrace();            }
+            
+        
+        System.out.println(this.nombre+"ha llegado a la meta");
+        
+        yield();
         }
-    }
+        for (int i=limite;i>=x;i-=5){
+            System.out.println(this.nombre+"avanza");
+            this.animal.setLocation(i,y);
+            try{
+                sleep(100);
+            } catch (InterruptedException ex) {
+            ex.printStackTrace();            }
+            
+        
+        System.out.println(this.nombre+"ha llegado a la meta");
+        
+        yield();   
+        }
+    }}
     
     
     

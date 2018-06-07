@@ -60,7 +60,7 @@ public class Gui extends JFrame{
                 tortuga.start();
             }
         });
-        setSize(700,650);
+        setSize(700,700);
         
     
     }
